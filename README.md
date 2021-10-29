@@ -14,13 +14,12 @@ Original App Design Project - README Template
 An app that displays the locations of nearby toilets/restrooms through the use of GPS.
 
 ### App Evaluation
-[Evaluation of your app across the following attributes]
-- **Category:**
-- **Mobile:**
-- **Story:**
-- **Market:**
-- **Habit:**
-- **Scope:**
+- **Category:** Health/Utility
+- **Mobile:** App is primarily designed for mobile devices
+- **Story:** Collect submitted information from users and display them in a way easy to parse through.
+- **Market:** Individuals who need to locate a restroom (in its current state, must be on CPP campus)
+- **Habit:** The app would be used any time you need to find/rate a restroom.
+- **Scope:** We would start by using our own database to store the restroom locations/ratings. The app could potentially be implemented into Google maps.
 
 ## Product Spec
 
