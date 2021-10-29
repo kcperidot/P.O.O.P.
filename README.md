@@ -69,7 +69,6 @@ An app that displays the locations of nearby toilets/restrooms through the use o
   => Rating
 
 ## Wireframes
-[Add picture of your hand sketched wireframes in this section]
 <img src="TP_Wireframe.jpg" width=600>
 
 ### [BONUS] Digital Wireframes & Mockups
