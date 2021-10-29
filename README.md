@@ -28,39 +28,46 @@ An app that displays the locations of nearby toilets/restrooms through the use o
 
 **Required Must-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can find themselves and any restrooms on a map
+* User can see details of a restroom (opens a new screen)
+* User can see/rate/comment on the location and cleanliness of the restroom
+* User can filter restrooms shown (Male/Female/All Gender/No Filter)
+* User can add restroom in a location
 
 **Optional Nice-to-have Stories**
 
-* [fill in your required user stories here]
-* ...
+* User can see/add/resolve supply warnings (e.g. "Restroom is out of paper towels"); warnings are time-stamped and resolved in an hour if untouched (in case custodial staff resolve the issue)
+* User can search restrooms
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Map Screen
+   * User can see their location and location of restrooms in their proximity
+* Preferences
+    * User can change filters on what restrooms are shown
+* Add Restroom
+    * User can add a restroom if one does not exist in the area
+* Restroom Detail
+   * User can see details of a selected restroom
+* Rating
+    * User can add details/rating/comments about a restroom
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
+* Map Screen
 
 **Flow Navigation** (Screen to Screen)
 
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
+* Map Screen
+  => Preferences
+* Map Screen
+  => Add Restroom
+* Map Screen
+  => Restroom Detail
+* Restroom Detail
+  => Rating
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
