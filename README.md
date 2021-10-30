@@ -1,7 +1,7 @@
 Original App Design Project - README Template
 ===
-
-# TOILET PIRATES
+ 
+# PUBLIC ONSITE OUTHOUSE PATHFINDER (P.O.O.P.)
 
 ## Table of Contents
 1. [Overview](#Overview)
