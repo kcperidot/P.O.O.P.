@@ -78,8 +78,27 @@ An app that displays the locations of nearby toilets/restrooms through the use o
 ## Schema 
 [This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+| **Property**   | **Type**    | **Description** |
+| -------------- | ----------- | --------------- |
+| location       | String      | Title of rr location|
+| picture        | File        | Image of outside of restroom|
+| rating         | Text        | Star rating of rr|
+| ratingCount    | Int         | Amount of ratings for rr|
+| updatedAt      | DateTime    | Last time rr was rated|
+| comments       | Text        | Comments of rr|
+| category       | String      | Male/Female/All Gender|
+| status         | String      | (Stretch) whether rr needs facilities, closings (temporarily or for the day), etc|
+| statusUpdatedAt| DateTime    | (Stretch) last time status was updated|
+| rating   | Text        |                 |
+| rating   | Text        |                 |
 ### Networking
 - [Add list of network requests by screen ]
 - [Create basic snippets for each Parse network request]
 - [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+| **CRUD**  | **HTTP Verb** | **Example** |
+| --------- | ------------- | ----------- |
+| Create    | POST          | Create a new location/rating/comment|
+| Read      | GET           | Get locations on map, rating/comment on rr detail pg|
+| Update    | PUT           | Add user rating/comment/rr location|
+| Delete    | DELETE        | |
