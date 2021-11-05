@@ -76,7 +76,6 @@ An app that displays the locations of nearby toilets/restrooms through the use o
 ### [BONUS] Interactive Prototype
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
 | **Property**   | **Type**    | **Description** |
 | -------------- | ----------- | --------------- |
@@ -89,16 +88,25 @@ An app that displays the locations of nearby toilets/restrooms through the use o
 | category       | String      | Male/Female/All Gender|
 | status         | String      | (Stretch) whether rr needs facilities, closings (temporarily or for the day), etc|
 | statusUpdatedAt| DateTime    | (Stretch) last time status was updated|
-| rating   | Text        |                 |
-| rating   | Text        |                 |
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+**List of network requests by screen**
+- Map Screen
+   - (Read/GET) Query all restroom markers near the user
+- Preferences Screen
+   - (Update/PUT) Update category to filter which restrooms are shown to user
+- Add Restroom
+-  (Create/POST) Create a new restroom marker
+   - location, picture, category (others can be added via Leave Rating Screen)  
+- Restroom Detail Screen
+-  (Read/GET) Query all properties
+- Leave Rating Screen
+-  (Create/POST) Create new rating + comment on a restroom
+-  (Update/PUT) Update status of restroom
+-  (Delete) Delete restroom status (i.e. resolve situation)
 
 | **CRUD**  | **HTTP Verb** | **Example** |
 | --------- | ------------- | ----------- |
 | Create    | POST          | Create a new location/rating/comment|
 | Read      | GET           | Get locations on map, rating/comment on rr detail pg|
 | Update    | PUT           | Add user rating/comment/rr location|
-| Delete    | DELETE        | |
+| Delete    | DELETE        | Resolve rr status|
