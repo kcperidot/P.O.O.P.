@@ -81,7 +81,7 @@ An app that displays the locations of nearby toilets/restrooms through the use o
 | -------------- | ----------- | --------------- |
 | location       | String      | Title of rr location|
 | picture        | File        | Image of outside of restroom|
-| rating         | Text        | Star rating of rr|
+| rating         | Int         | Star rating of rr|
 | ratingCount    | Int         | Amount of ratings for rr|
 | updatedAt      | DateTime    | Last time rr was rated|
 | comments       | Text        | Comments of rr|
