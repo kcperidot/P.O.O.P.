@@ -1,5 +1,6 @@
 package com.example.test;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -12,6 +13,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -61,6 +63,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         showRestroomsInMap(mMap);
     }
 
+
     private void showRestroomsInMap(final GoogleMap googleMap){
 
         ParseQuery<ParseUser> query = ParseUser.getQuery();
@@ -71,6 +74,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     for(int i = 0; i < restrooms.size(); i++) {
                         LatLng rrLocation = new LatLng(restrooms.get(i).getParseGeoPoint("Location").getLatitude(), restrooms.get(i).getParseGeoPoint("Location").getLongitude());
                         googleMap.addMarker(new MarkerOptions().position(rrLocation).title(restrooms.get(i).getString("Name")).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                        int finalI = i;
+                        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+                            @Override
+                            public boolean onMarkerClick(Marker marker) {
+                                String name = marker.getTitle();
+                                String status = restrooms.get(finalI).getString("Status");
+                                String category = restrooms.get(finalI).getString("Category");
+                                //int rating = restrooms.get(finalI).getNumber("Rating").intValue();
+                                Intent i = new Intent(MapsActivity.this, DetailsActivity.class);
+                                i.putExtra("name", name);
+                                i.putExtra("status", status);
+                                i.putExtra("category", category);
+                                //i.putExtra("rating", rating);
+                                startActivity(i);
+                                return false;
+                            }
+                        });
                     }
                 } else {
                     // handle the error
