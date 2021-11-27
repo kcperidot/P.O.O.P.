@@ -56,6 +56,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng cpp = new LatLng(34.0583, -117.8218);
         mMap.addMarker(new MarkerOptions().position(cpp).title("Marker at CPP"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(cpp));
+        mMap.moveCamera(CameraUpdateFactory.zoomTo(15)); // sets zoom
 
         showRestroomsInMap(mMap);
     }
