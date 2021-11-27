@@ -1,16 +1,25 @@
 package com.example.test;
 
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.fragment.app.FragmentActivity;
 
-import android.os.Bundle;
-
+import com.example.test.databinding.ActivityMapsBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.example.test.databinding.ActivityMapsBinding;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
+import java.util.List;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -44,8 +53,30 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng cpp = new LatLng(34.0583, -117.8218);
+        mMap.addMarker(new MarkerOptions().position(cpp).title("Marker at CPP"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(cpp));
+
+        showRestroomsInMap(mMap);
+    }
+
+    private void showRestroomsInMap(final GoogleMap googleMap){
+
+        ParseQuery<ParseUser> query = ParseUser.getQuery();
+        query.whereExists("Location");
+        query.findInBackground(new FindCallback<ParseUser>() {
+            @Override  public void done(List<ParseUser> restrooms, ParseException e) {
+                if (e == null) {
+                    for(int i = 0; i < restrooms.size(); i++) {
+                        LatLng rrLocation = new LatLng(restrooms.get(i).getParseGeoPoint("Location").getLatitude(), restrooms.get(i).getParseGeoPoint("Location").getLongitude());
+                        googleMap.addMarker(new MarkerOptions().position(rrLocation).title(restrooms.get(i).getString("Name")).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                    }
+                } else {
+                    // handle the error
+                    Log.d("restroom", "Error: " + e.getMessage());
+                }
+            }
+        });
+        ParseQuery.clearAllCachedResults();
     }
 }
