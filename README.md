@@ -30,7 +30,8 @@ An app that displays the locations of nearby toilets/restrooms through the use o
 - [x] User can find themselves and any restrooms on a map
    - <img src='POOP 11-26.gif' title='Map Integration' width='250' alt='Video Walkthrough of Map Feature' />
    - <img src='parse_rrs.png' title='Parse Restroom List' alt='Restrooms accounted for on Parse' />
-- [ ] User can see details of a restroom (opens a new screen)
+- [x] User can see details of a restroom (opens a new screen)
+   - <img src='POOP rating scn 11-26.png ' title='Rating Screen' width='250' alt='Prototype ratings screen' />
 - [ ] User can see/rate/comment on the location and cleanliness of the restroom
 - [ ] User can filter restrooms shown (Male/Female/All Gender/No Filter)
 - [ ] User can add restroom in a location
