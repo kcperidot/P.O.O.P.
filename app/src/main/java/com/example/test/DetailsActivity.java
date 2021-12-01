@@ -41,7 +41,5 @@ public class DetailsActivity extends AppCompatActivity {
         tvCategory.setText(category);
         //ratingBar.setRating(rating);
 
-        //WORK BITCH
-
     }
 }
